@@ -1,14 +1,23 @@
-<h1>Restaurant info</h1>
 
-<p>Name: <%= @restaurant.name %> </p>
-<p>Address: <%= @restaurant.address %> </p>
-<p>Phone: <%= @restaurant.phone_number %> </p>
-<p>Category: <%= @restaurant.category %> </p>
+  <h1 class="mt-3">Restaurant info</h1>
 
+  <div class="row justify-content-center p-5">
+    <div class="card p-3" style="width: 800px">
+      <img src="http://loremflickr.com/1800/1000/<%=@restaurant.category%>_food" class="card-img-top  w-100" style="height: 240px; object-fit: cover" alt="IMAGE">
+      <div class="card-body">
+        <p class="card-text">Name: <%= @restaurant.name %></p>
+        <p class="card-text">Phone: <%= @restaurant.phone_number %></p>
+        <p class="card-text">Category: <%= @restaurant.category %></p>
+      </div>
+    </div>
+  </div>
 
-<%= link_to 'Delete', restaurant_path(@restaurant), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' } %> |
+  <div class="row">
+    <div class="p-3">
+      <%= link_to 'Delete', restaurant_path(@restaurant), data: { turbo_method: :delete, turbo_confirm: 'are u sure?' }, class: "btn btn-outline-secondary m-auto" %>
 
-<%= link_to 'Back', restaurants_path %> |
+      <%= link_to 'Back', restaurants_path, class: "btn btn-outline-secondary m-auto" %>
 
-<%= link_to 'Update', edit_restaurant_path(@restaurant) %>
-
+      <%= link_to 'Update', edit_restaurant_path(@restaurant), class: "btn btn-outline-secondary m-auto" %>
+    </div>
+  </div>

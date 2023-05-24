@@ -1,9 +1,15 @@
-<h1>Restaurants List</h1>
-
-<ul>
+<div class='row align-items-center'>
+  <div class="col-9">
+    <h1>Restaurants List</h1>
+  </div>
+  <div class="col-3">
+    <%= link_to "New restaurant", new_restaurant_path, class: "btn btn-outline-secondary m-auto" %>
+  </div>
+</div>
+<div class='row p-3'>
   <% @restaurants.each do |restaurant| %>
-  <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <div class="col-6">
+      <%= link_to restaurant.name, restaurant_path(restaurant), class: "btn btn-outline-secondary w-100 mt-3" %>
+    </div>
   <% end  %>
-</ul>
-
-<%= link_to "New restaurant", new_restaurant_path %>
+</div>
